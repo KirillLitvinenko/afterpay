@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+
+  <script type="module" src="/build/afterpay.esm.js"></script>
+  <script nomodule src="/build/afterpay.js"></script>
+
+</head>
+<body>
+
+  <!-- select-options attribute simulates response from server-->
+
+  <form>
+    <custom-select
+            select-name="swipe-select"
+            select-id="swipe-select"
+            select-options='[
+              { "id": 101, "value": "30" },
+              { "id": 102, "value": "35" },
+              { "id": 103, "value": "40" },
+              { "id": 104, "value": "50" },
+              { "id": 105, "value": "60" },
+              { "id": 106, "value": "70" },
+              { "id": 107, "value": "80" },
+              { "id": 108, "value": "90" },
+              { "id": 109, "value": "100" },
+              { "id": 110, "value": "110" },
+              { "id": 111, "value": "356" }
+            ]'
+    >
+    </custom-select>
+    <input type="submit" value="submit" />
+  </form>
+
+</body>
+</html>

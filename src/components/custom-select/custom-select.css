@@ -1,0 +1,12 @@
+.slider-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    overflow-x: scroll;
+}
+.slide {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    cursor: pointer;
+}

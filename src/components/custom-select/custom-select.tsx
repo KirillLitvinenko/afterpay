@@ -7,15 +7,15 @@ import { Component, Prop, State, Watch, Listen, h } from '@stencil/core';
 })
 export class CustomSelect {
     @Prop() selectOptions: any[] | string;
-    @Prop() selectName: string;
+    @Prop() selectName: string = 'swipe';
     @Prop() selectId: string;
-    @Prop() itemWidth: number;
-    @Prop() itemHeight: number;
-    @Prop() itemsToShow: number;
+    @Prop() itemWidth: number = 70;
+    @Prop() itemHeight: number = 40;
+    @Prop() itemsToShow: number = 5;
     @Prop() selectCurrency: string = '€';
     @Prop() selectPeriod: string = 'month';
     @Prop() selectedMarkerText: string;
-    @Prop() mainColor: string;
+    @Prop() mainColor: string = '#005e51';
 
     @State() selectedValue: string;
     @State() selectedIndex: number;
@@ -44,11 +44,7 @@ export class CustomSelect {
 
     private _selectOptions: any[];
     private markSelected(value, index): boolean {
-        if (this.selectedValue) {
-            return value === this.selectedValue
-        } else {
-            return index === this.middleIndex;
-        }
+        return this.selectedValue ? value === this.selectedValue : index === this.middleIndex;
     };
 
     setSelected() {

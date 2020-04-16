@@ -1,3 +1,6 @@
+p {
+    margin: 0;
+}
 .hidden-select {
     visibility: hidden;
     height: 0;

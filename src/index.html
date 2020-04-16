@@ -7,16 +7,25 @@
   <script type="module" src="/build/afterpay.esm.js"></script>
   <script nomodule src="/build/afterpay.js"></script>
 
+  <style>
+    p {
+      margin: 0;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+  </style>
+
 </head>
 <body>
-
-  <!-- select-options attribute simulates response from server-->
-
-  <form>
-    <custom-select
-            select-name="swipe-select"
-            select-id="swipe-select"
-            select-options='[
+  <div class="main-container">
+    <form>
+      <custom-select
+              select-name="swipe-select"
+              select-id="swipe-select"
+              select-options='[
               { "id": 101, "value": "30" },
               { "id": 102, "value": "35" },
               { "id": 103, "value": "40" },
@@ -29,10 +38,17 @@
               { "id": 110, "value": "110" },
               { "id": 111, "value": "356" }
             ]'
-    >
-    </custom-select>
-    <input type="submit" value="submit" />
-  </form>
-
+              item-width=70
+              item-height=40
+              items-to-show=5
+              select-currency="&#128"
+              select-period="month"
+              selected-marker-text="Current choice"
+              main-color="#005e51"
+      >
+      </custom-select>
+      <input type="submit" value="submit" />
+    </form>
+  </div>
 </body>
 </html>

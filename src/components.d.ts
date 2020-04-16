@@ -7,23 +7,16 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CustomSelect {
+        "itemHeight": number;
+        "itemWidth": number;
+        "itemsToShow": number;
+        "mainColor": string;
+        "selectCurrency": string;
         "selectId": string;
         "selectName": string;
         "selectOptions": any[] | string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "selectPeriod": string;
+        "selectedMarkerText": string;
     }
 }
 declare global {
@@ -33,40 +26,25 @@ declare global {
         prototype: HTMLCustomSelectElement;
         new (): HTMLCustomSelectElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "custom-select": HTMLCustomSelectElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface CustomSelect {
+        "itemHeight"?: number;
+        "itemWidth"?: number;
+        "itemsToShow"?: number;
+        "mainColor"?: string;
+        "selectCurrency"?: string;
         "selectId"?: string;
         "selectName"?: string;
         "selectOptions"?: any[] | string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "selectPeriod"?: string;
+        "selectedMarkerText"?: string;
     }
     interface IntrinsicElements {
         "custom-select": CustomSelect;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -74,7 +52,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "custom-select": LocalJSX.CustomSelect & JSXBase.HTMLAttributes<HTMLCustomSelectElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

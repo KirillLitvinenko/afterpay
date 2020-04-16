@@ -29,12 +29,7 @@ export class CustomSelect {
     moveElement: HTMLElement;
 
     @Watch('selectOptions')selectOptionsWatcher(newValue: any[] | string) {
-        if (typeof newValue === 'string') {
-            this._selectOptions = JSON.parse(newValue);
-        }
-        else {
-            this._selectOptions = newValue;
-        }
+        typeof newValue === 'string' ? this._selectOptions = JSON.parse(newValue) : this._selectOptions = newValue;
     }
 
     componentWillLoad() {
